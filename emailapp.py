@@ -16,12 +16,12 @@ from transformers import AutoModelForCausalLM
 HF_TOKEN="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"
 
 # Quantisation
-# bnb_config=BitsAndBytesConfig(
-#     load_in_4bit=True,
-#     bnb_4bit_use_double_quant=True,
-#     bnb_4bit_quant_type="nf4",
-#     bnb_4bit_compute_dtype=torch.bfloat16
-# )
+bnb_config=BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
 
 
 model_name="meta-llama/Llama-2-7b-chat-hf"
@@ -32,8 +32,9 @@ tokenizer.pad_token=tokenizer.eos_token
 
 
 model=AutoModelForCausalLM.from_pretrained(
-    model_name="meta-llama/Llama-2-7b-chat-hf",
+    model_name,
     device_map="auto",
+    quantization_config=bnb_config,
     token=HF_TOKEN
 )
 
