@@ -9,7 +9,7 @@ from langchain.llms import HuggingFacePipeline
 from transformers import (AutoTokenizer,
                           AutoModelForCausalLM,
                           BitsAndBytesConfig,
-                          pipeline)
+                          pipeline,TFAutoModel)
 
 
 
@@ -31,7 +31,7 @@ tokenizer.pad_token=tokenizer.eos_token
 
 
 
-model=AutoModelForCausalLM.from_pretrained(
+model=TFAutoModel.from_pretrained(
     model_name,
     device_map="auto",
     load_in_4bit=True,
