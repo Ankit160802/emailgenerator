@@ -7,9 +7,9 @@ import json
 import torch
 from langchain.llms import HuggingFacePipeline
 from transformers import (AutoTokenizer,
-                          AutoModelForCausalLM,
                           BitsAndBytesConfig,
-                          pipeline,TFAutoModel)
+                          pipeline)
+from transformers import AutoModelForCausalLM
 
 
 
@@ -31,8 +31,8 @@ tokenizer.pad_token=tokenizer.eos_token
 
 
 
-model=TFAutoModel.from_pretrained(
-    model_name,
+model=AutoModelForCausalLM.from_pretrained(
+    model_name=model_name,
     device_map="auto",
     token=HF_TOKEN
 )
