@@ -1,5 +1,2 @@
-langchain
-transformers
-torch
-json
-sys
+langchain==0.2.9
+transformers==4.42.4
