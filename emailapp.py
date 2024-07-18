@@ -34,7 +34,6 @@ tokenizer.pad_token=tokenizer.eos_token
 model=TFAutoModel.from_pretrained(
     model_name,
     device_map="auto",
-    load_in_4bit=True,
     token=HF_TOKEN
 )
 
