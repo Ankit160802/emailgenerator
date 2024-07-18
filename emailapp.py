@@ -1,6 +1,7 @@
 import streamlit as st
 
 from langchain.prompts import PromptTemplate
+from langchain_community.llms import Ollama
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 import json
