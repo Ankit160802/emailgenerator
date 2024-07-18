@@ -1,4 +1,5 @@
 import streamlit as st
+import langchainforEmail
 
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama
@@ -52,34 +53,34 @@ from transformers import AutoModelForCausalLM
 # llm=HuggingFacePipeline(pipeline=text_generator)
 llm=Ollama(model="llama3")
 
-def generate_email(subject1):
+# def generate_email(subject1):
 
-    email_subject_prompt=PromptTemplate(
-        input_variables=['subject'],
-        template=""" give only one subject for email for {subject} in simple words """
-    )
+#     email_subject_prompt=PromptTemplate(
+#         input_variables=['subject'],
+#         template=""" give only one subject for email for {subject} in simple words """
+#     )
 
-    subject=LLMChain(llm=llm,prompt=email_subject_prompt,output_key="email_subject")
+#     subject=LLMChain(llm=llm,prompt=email_subject_prompt,output_key="email_subject")
 
-    # email body chain
+#     # email body chain
 
-    email_body_prompt=PromptTemplate(
-        input_variables=['email_subject'],
-        template=""" write only one email for given subject {email_subject}."""
-    )
-    body=LLMChain(llm=llm,prompt=email_body_prompt,output_key="email_body")
+#     email_body_prompt=PromptTemplate(
+#         input_variables=['email_subject'],
+#         template=""" write only one email for given subject {email_subject}."""
+#     )
+#     body=LLMChain(llm=llm,prompt=email_body_prompt,output_key="email_body")
 
-    # chain finalizing
+#     # chain finalizing
 
-    email_chain=SequentialChain(
-        chains=[subject,body],
-        input_variables=['subject'],
-        output_variables=['email_subject','email_body']
-    )
+#     email_chain=SequentialChain(
+#         chains=[subject,body],
+#         input_variables=['subject'],
+#         output_variables=['email_subject','email_body']
+#     )
 
-    response=email_chain.invoke(subject1)
+#     response=email_chain.invoke(subject1)
 
-    return response
+#     return response
 
 st.title("email generator")
 
