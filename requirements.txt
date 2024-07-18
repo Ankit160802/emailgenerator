@@ -4,3 +4,4 @@ torch==2.3.1
 langchain-community==0.2.7
 huggingface==0.0.1
 huggingface-hub==0.23.5
+accelerate==0.32.1
