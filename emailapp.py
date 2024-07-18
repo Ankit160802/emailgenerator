@@ -1,4 +1,7 @@
 import streamlit as st
+import sys
+sys.path.append('https://github.com/Ankit160802/emailgenerator/edit/main/emailapp.py')
+
 import langchainforEmail
 
 st.title("email generator")
