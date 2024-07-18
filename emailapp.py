@@ -35,7 +35,6 @@ model=AutoModelForCausalLM.from_pretrained(
     model_name,
     device_map="auto",
     load_in_4bit=True,
-    # quantization_config=bnb_config,
     token=HF_TOKEN
 )
 
