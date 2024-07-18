@@ -32,7 +32,7 @@ tokenizer.pad_token=tokenizer.eos_token
 
 
 model=AutoModelForCausalLM.from_pretrained(
-    model_name=model_name,
+    model_name="meta-llama/Llama-2-7b-chat-hf",
     device_map="auto",
     token=HF_TOKEN
 )
