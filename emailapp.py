@@ -13,7 +13,7 @@ from transformers import (AutoTokenizer,
 
 
 
-HF_TOKEN="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"
+HF_TOKEN="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"
 
 # Quantisation
 # bnb_config=BitsAndBytesConfig(
