@@ -10,11 +10,11 @@ from langchain.llms import HuggingFacePipeline
 from transformers import (AutoTokenizer,
                           BitsAndBytesConfig,
                           pipeline)
-from transformers import AutoModelForCausalLM
+# from transformers import AutoModelForCausalLM
 
 
 
-HF_TOKEN="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"
+# HF_TOKEN="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"
 
 # Quantisation
 # bnb_config=BitsAndBytesConfig(
@@ -25,32 +25,37 @@ HF_TOKEN="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"
 # )
 
 
-model_name="meta-llama/Llama-2-7b-chat-hf"
+# model_name="meta-llama/Llama-2-7b-chat-hf"
 
-tokenizer=AutoTokenizer.from_pretrained(model_name,token=HF_TOKEN)
-tokenizer.pad_token=tokenizer.eos_token
+# tokenizer=AutoTokenizer.from_pretrained(model_name,token=HF_TOKEN)
+# tokenizer.pad_token=tokenizer.eos_token
 
 
 
-model=AutoModelForCausalLM.from_pretrained(
-    model_name,
-    device_map="auto",
-    # quantization_config=bnb_config,
-    token=HF_TOKEN
-)
+# model=AutoModelForCausalLM.from_pretrained(
+#     model_name,
+#     device_map="auto",
+#     # quantization_config=bnb_config,
+#     token=HF_TOKEN
+# )
 
 # PIPELINE
-text_generator=pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
-    max_new_tokens=128
-)
+# text_generator=pipeline(
+#     "text-generation",
+#     model=model,
+#     tokenizer=tokenizer,
+#     max_new_tokens=128
+# )
 
 
 
-llm=HuggingFacePipeline(pipeline=text_generator)
+# llm=HuggingFacePipeline(pipeline=text_generator)
 # llm=Ollama(model="llama3")
+from langchain.llms import GooglePalm
+
+api_key = 'AIzaSyAemuKyW8j93M2OyoZK7A_voHoThxSxprU' 
+
+llm = GooglePalm(google_api_key=api_key, temperature=0.1)
 
 def generate_email(subject1):
 
