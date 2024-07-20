@@ -8,7 +8,7 @@ import json
 import torch
 from langchain.llms import GooglePalm
 
-api_key = 'AIzaSyAemuKyW8j93M2OyoZK7A_voHoThxSxprU' 
+api_key = st.secrets["api_key"] 
 from langchain_google_genai import GoogleGenerativeAI
 
 llm = GoogleGenerativeAI(model="models/text-bison-001", google_api_key=api_key, temperature=0.1)
