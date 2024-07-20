@@ -93,7 +93,7 @@ subject1=st.text_input("enter subject")
 
 
 
-if subject:
+if subject1:
     response=generate_email(subject1)
     st.header(response['email_subject'])
     st.write(response['email_body'])
