@@ -89,12 +89,12 @@ def generate_email(subject1):
 st.title("email generator")
 
 # subject=st.sidebar.selectbox("pick your task",("request item for 20 piece cheffing dish","declining_request"))
-subject=st.text_input("enter subject")
+subject1=st.text_input("enter subject")
 
 
 
 if subject:
-    response=generate_email(subject)
+    response=generate_email(subject1)
     st.header(response['email_subject'])
     st.write(response['email_body'])
 
