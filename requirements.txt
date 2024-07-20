@@ -8,3 +8,4 @@ accelerate==0.32.1
 bitsandbytes==0.43.1
 ollama==0.2.1
 google-generativeai==0.7.2
+langchain-google-genai==1.0.7
